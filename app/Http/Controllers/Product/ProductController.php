@@ -4,18 +4,30 @@ namespace App\Http\Controllers\Product;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Product;
 
 class ProductController extends Controller
 {
     public function index()
     {
-        $products = [
-            [ "productName" => "laptop", "color" => "red", "price"=> 300 ],
-            [ "productName" => "TV", "color" => "black", "price"=> 350 ],
-            [ "productName" => "Phone", "color" => "silver", "price"=> 200 ],
-            [ "productName" => "Desktop", "color" => "white", "price"=> 400 ],
-        ];
+        //$data = Product::all();
+        //$data = Product::find(5);
+        //$data = Product::where('price', 27200)->get();
+        //$data = Product::where('name', 'Example')->first();
+        //$data = Product::orderBy('id', 'desc')->get();
+        //$data = Product::pluck('name');
 
-        return view('products.index', ['products' => $products]);
+        /*Product::create(['name' => 'New Name',
+            'price' => '12600'
+        ]);*/
+
+        /*$product = Product::find(1);
+        $product->update(['name' => 'Updated']);*/
+
+        // Product::find(1)->delete();
+        $data = Product::all();
+        return view('products.index', [
+            'products' => $data
+        ]);
     }
 }

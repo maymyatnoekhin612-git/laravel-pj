@@ -8,9 +8,9 @@
     <h1>Product List</h1>
     <ul>
         <?php foreach($products as $product): ?>
-		    <li><?php echo $product['productName'] ,
-            "<br>color - ", $product['color'],
-            "<br>price - " , $product['price']?></li>
+		    <li><?php echo $product['name'] ,
+            "<br>price - " , $product['price'] ?>
+            </li>
 		<?php endforeach ?>
     </ul>
 </body>
